@@ -22,7 +22,7 @@ func ListGHPullRequests() []*PullRequest {
 		}
 	}
 	msg, err := execCommand("gh", "pr", "list", "--limit=200", "--state=all").CombinedOutput()
-	if err != nil {
+	if err != nil { 
 		log.Debug().Err(err)
 	}
 	prsraw := strings.Split(strings.TrimSpace(string(msg)), "\n")
